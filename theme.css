@@ -1,6 +1,5 @@
 
-:root
-{
+:root {
     --dark0_x:  46,52,64; /* #2e3440 */
     --dark0:    rgb(var(--dark0_x));
     --dark1_x:  59,66,82; /* #3b4252 */
@@ -38,10 +37,16 @@
     --green:    rgb(var(--green_x));
     --purple_x: 180,142,173; /* #b48ead */
     --purple:   rgb(var(--purple_x));
-}
 
-body
-{
+    --tag-radius: 5px;
+
+    .cm-header-1, .cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6 {
+        font-size: var(--font-text-size);
+    }
+
+  }
+
+body {
     --accent-h: 354; /* --red #bf616a */
     --accent-s: 42%;
     --accent-l: 56%;
@@ -67,8 +72,19 @@ body
     --embed-border-left: 6px double var(--interactive-accent);
 }
 
-.theme-dark
-{
+.theme-dark {
+  /* Nord colors - dark theme */
+  --nano-color-foreground: #ECEFF4;
+  --nano-color-background: #2E3440;
+  --nano-color-highlight:  #3B4252;
+  --nano-color-critical:   #EBCB8B;
+  --nano-color-salient:    #81A1C1;
+  --nano-color-strong:     #ECEFF4;
+  --nano-color-popout:     #D08770;
+  --nano-color-subtle:     #434C5E;
+  --nano-color-faded:     #677691;
+
+
     --color-red-rgb:                 var(--red_x);
     --color-red:                     var(--red);
     --color-purple-rgb:              var(--purple_x);
@@ -83,28 +99,27 @@ body
     --color-yellow:                  var(--yellow);
     --color-orange-rgb:              var(--orange_x);
     --color-orange:                  var(--orange);
-    /* --color-pink:                    var(--purple); */
 
-    --background-primary:            var(--dark0);
+    --background-primary:            var(--nano-color-background);
     --background-primary-alt:        var(--dark0);
     --background-secondary:          var(--dark1);
     --background-secondary-alt:      var(--dark2);
     --background-modifier-border:    var(--dark2);
 
-    --cursor-line-background:        rgba(var(--red_x), 0.2);
+    --cursor-line-background:        var(--nano-color-highlight);
 
-    --text-normal:                   var(--light2);
+    --text-normal:                   var(--nano-color-foreground);
     --text-faint:                    var(--light0);
-    --text-muted:                    var(--light1);
+    --text-muted:                    var(--nano-color-faded);
 
-    --link-url:                      var(--purple);
+    --link-url:                      var(--nano-color-salient);
 
-    --h1-color:                      var(--red);
-    --h2-color:                      var(--yellow);
-    --h3-color:                      var(--green);
-    --h4-color:                      var(--purple);
-    --h5-color:                      var(--frost0);
-    --h6-color:                      var(--frost2);
+    --h1-color:                      var(--nano-color-foreground);
+    --h2-color:                      var(--nano-color-foreground);
+    --h3-color:                      var(--nano-color-foreground);
+    --h4-color:                      var(--nano-color-foreground);
+    --h5-color:                      var(--nano-color-foreground);
+    --h6-color:                      var(--nano-color-foreground);
 
     --text-highlight-bg:             var(--frost1);
     --text-highlight-fg:             var(--dark0);
@@ -118,7 +133,7 @@ body
 
     --titlebar-text-color-focused:   var(--red);
 
-    --inline-title-color:            var(--yellow);
+    --inline-title-color:            var(--nano-color-foreground);
 
     --bold-color:                    var(--yellow);
     --italic-color:                  var(--yellow);
@@ -160,8 +175,9 @@ body
 
     --calendar-hover:                var(--red);
     --calendar-background-hover:     var(--dark3);
-    --calendar-week:                 var(--yellow);
-    --calendar-today:                var(--yellow);
+    --calendar-week:                 var(--nano-color-critical);
+    --calendar-year:                 var(--nano-color-critical);
+    --calendar-today:                var(--nano-color-critical);
 
     --dataview-key:                  var(--text-faint);
     --dataview-key-background:       rgba(var(--frost2_x), 0.3);
@@ -172,8 +188,19 @@ body
     --tab-text-color-focused-active-current: var(--red);
 }
 
-.theme-light
-{
+.theme-light {
+
+        /* Material colors - light theme */
+  --nano-color-foreground: #37474F;
+  --nano-color-background: #FFFFFF;
+  --nano-color-highlight:  #FAFAFA;
+  --nano-color-critical:   #FF6F00;
+  --nano-color-salient:    #673AB7;
+  --nano-color-strong:     #000000;
+  --nano-color-popout:     #FFAB91;
+  --nano-color-subtle:     #ECEFF1;
+  --nano-color-faded:     #B0BEC5;
+
     --color-red-rgb:                 var(--red_x);
     --color-red:                     var(--red);
     --color-purple-rgb:              var(--purple_x);
@@ -196,20 +223,20 @@ body
     --background-secondary-alt:      var(--light1);
     --background-modifier-border:    var(--light1);
 
-    --cursor-line-background:        rgba(var(--red_x), 0.1);
+    --cursor-line-background:        var(--nano-color-highlight);
 
     --text-normal:                   var(--dark2);
     --text-faint:                    var(--dark0);
     --text-muted:                    var(--dark1);
 
-    --link-url:                      var(--purple);
+    --link-url:                      var(--nano-color-salient);
 
-    --h1-color:                      var(--red);
-    --h2-color:                      var(--yellow);
-    --h3-color:                      var(--green);
-    --h4-color:                      var(--purple);
-    --h5-color:                      var(--frost0);
-    --h6-color:                      var(--frost2);
+    --h1-color:                      var(--nano-color-foreground);
+    --h2-color:                      var(--nano-color-foreground);
+    --h3-color:                      var(--nano-color-foreground);
+    --h4-color:                      var(--nano-color-foreground);
+    --h5-color:                      var(--nano-color-foreground);
+    --h6-color:                      var(--nano-color-foreground);
 
     --text-highlight-bg:             var(--yellow);
     --text-highlight-fg:             var(--dark0);
@@ -223,10 +250,11 @@ body
 
     --titlebar-text-color-focused:   var(--red);
 
-    --inline-title-color:            var(--yellow);
-
+    --inline-title-color:            var(--nano-color-foreground);
+/*
     --bold-color:                    var(--green);
     --italic-color:                  var(--green);
+*/
 
     --checkbox-color:                var(--frost2);
     --checkbox-color-hover:          var(--frost2);
@@ -265,8 +293,9 @@ body
 
     --calendar-hover:                var(--red);
     --calendar-background-hover:     var(--light0);
-    --calendar-week:                 var(--orange);
-    --calendar-today:                var(--orange);
+    --calendar-week:                 var(--nano-color-critical);
+    --calendar-year:                 var(--nano-color-critical);
+    --calendar-today:                var(--nano-color-critical);
 
     --dataview-key:                  var(--text-faint);
     --dataview-key-background:       rgba(var(--frost2_x), 0.3);
@@ -299,6 +328,10 @@ td
     border-left: 1px solid var(--background-secondary) !important;
     border-right: 1px solid var(--background-secondary) !important;
     border-bottom: 1px solid var(--background-secondary) !important;
+}
+
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon, .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+    color: var(--nano-color-popout);
 }
 
 .markdown-rendered tbody tr:nth-child(even)
@@ -334,10 +367,49 @@ td
     color: var(--text-highlight-fg) !important;
 }
 
-.cm-hashtag-begin:hover, .cm-hashtag-end:hover
-{
-    color: var(--text-accent);
-    /* background-color: var(--tag-background-hover); */
+a.tag,
+.cm-hashtag {
+    background: var(--nano-color-background);
+    color: var(--nano-color-foreground);
+    text-transform: uppercase;
+}
+
+a.tag {
+    border-top-left-radius: var(--tag-radius);
+    border-bottom-left-radius: var(--tag-radius);
+    border-right: 1px solid var(--nano-color-faded);
+    border-left: 1px solid var(--nano-color-faded);
+    border-top: 1px solid var(--nano-color-faded);
+    border-bottom: 1px solid var(--nano-color-faded);
+    padding-left: var(--tag-padding-x);
+}
+a.tag:hover {
+    color: var(--nano-color-strong);
+    text-decoration: underline;
+}
+
+.cm-hashtag.cm-hashtag-begin {
+    border-top-left-radius: var(--tag-radius);
+    border-bottom-left-radius: var(--tag-radius);
+    border-right: none;
+    border-left: 1px solid var(--nano-color-faded);
+    border-top: 1px solid var(--nano-color-faded);
+    border-bottom: 1px solid var(--nano-color-faded);
+    padding-left: var(--tag-padding-x);
+}
+
+.cm-hashtag.cm-hashtag-end {
+    border-top-right-radius: var(--tag-radius);
+    border-bottom-right-radius: var(--tag-radius);
+    border-left: none;
+    border-right: 1px solid var(--nano-color-faded);
+    border-top: 1px solid var(--nano-color-faded);
+    border-bottom: 1px solid var(--nano-color-faded);
+    padding-right: var(--tag-padding-x);
+}
+
+.cm-hashtag-begin:hover, .cm-hashtag-end:hover {
+    color: var(--nano-color-strong);
     text-decoration: underline;
 }
 
@@ -363,25 +435,30 @@ pre[class*="language-"]
     line-height: var(--line-height-tight) !important;
 }
 
-.cm-url
-{
+.cm-url {
     color: var(--link-url) !important;
 }
+.markdown-rendered .internal-link,
+.cm-s-obsidian span.cm-hmd-internal-link {
+    color: var(--link-url);
+}
+.markdown-rendered .internal-link:hover,
+.cm-s-obsidian span.cm-hmd-internal-link:hover {
+    color: var(--link-url);
+    text-decoration: underline;
+}
 
-.cm-url:hover
-{
+.cm-url:hover {
     color: var(--text-accent-hover) !important;
 }
 
 /* Keep highlight/marks the same between viewer and editor. */
-.cm-highlight
-{
+.cm-highlight {
     color: var(--text-highlight-fg) !important;
 }
 
 /* Keep inline code the same between viewer and editor. */
-.cm-inline-code
-{
+.cm-inline-code {
     border-radius: var(--radius-s);
     font-size: var(--code-size);
     padding: 0.1em 0.25em;
@@ -405,10 +482,12 @@ pre[class*="language-"]
     padding: 0.1em 0.25em 0.1em 0;
 }
 
-.cm-line .cm-strong
+/*.cm-line .cm-strong
 {
     color: var(--bold-color) !important;
 }
+*/
+
 
 /*
  * Keep list bullet padding the same between viewer and editor.
@@ -458,32 +537,31 @@ pre[class*="language-"]
     fill: var(--mermaid-seqnum) !important;
 }
 
-.calendar .week-num
-{
+#calendar-container .year {
+    color: var(--calendar-year) !important;
+}
+
+.calendar .week-num {
     color: var(--calendar-week) !important;
 }
 
-.calendar .today
-{
+.calendar .today {
     color: var(--calendar-today) !important;
 }
 
 .calendar .week-num:hover,
-.calendar .day:hover
-{
+.calendar .day:hover {
     color: var(--calendar-hover) !important;
     background-color: var(--calendar-background-hover) !important;
 }
 
-.markdown-embed-title
-{
+.markdown-embed-title {
     color: var(--yellow);
     font-weight: 600 !important;
 }
 
-.cm-active
-{
-    background-color: var(--cursor-line-background) !important;
+.cm-active {
+    background-color: var(--nano-color-highlight) !important;
 }
 
 .nav-file-tag

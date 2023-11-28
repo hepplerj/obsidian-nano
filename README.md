@@ -1,9 +1,5 @@
+# Obsidian + N Λ N O 
 
-# Obsidian + Nord
+I am a huge fan of Nicolas P. Rougier [N Λ N O theme for emacs](https://github.com/rougier/nano-emacs) and wanted to try porting it over to [Obsidian](https://obsidian.md). This is an attempt to do so.
 
-This is a [Nord](https://github.com/arcticicestudio/nord) theme for [Obsidian](https://obsidian.md).
-
-![](dark.png)
-
-![](light.png)
 
