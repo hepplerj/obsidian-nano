@@ -109,8 +109,8 @@ body {
     --cursor-line-background:        var(--nano-color-highlight);
 
     --text-normal:                   var(--nano-color-foreground);
-    --text-faint:                    var(--light0);
-    --text-muted:                    var(--nano-color-faded);
+    --text-faint:                    var(--nano-color-subtle);
+    --text-muted:                    var(--nano-color-foreground);
 
     --link-url:                      var(--nano-color-salient);
 
@@ -127,9 +127,9 @@ body {
     --text-accent:                   var(--orange);
     --text-accent-hover:             var(--frost2);
 
-    --tag-color:                     var(--frost0);
-    --tag-background:                var(--dark2);
-    --tag-background-hover:          var(--dark1);
+    --tag-color:                     var(--nano-color-foreground);
+    --tag-background:                var(--nano-color-background);
+    --tag-background-hover:          var(--nano-color-highlight);
 
     --titlebar-text-color-focused:   var(--red);
 
@@ -138,10 +138,10 @@ body {
     --bold-color:                    var(--yellow);
     --italic-color:                  var(--yellow);
 
-    --checkbox-color:                var(--frost0);
-    --checkbox-color-hover:          var(--frost0);
-    --checkbox-border-color:         var(--frost0);
-    --checkbox-border-color-hover:   var(--frost0);
+    --checkbox-color:                var(--nano-color-salient);
+    --checkbox-color-hover:          var(--nano-color-salient);
+    --checkbox-border-color:         var(--nano-color-salient);
+    --checkbox-border-color-hover:   var(--nano-color-faded);
     --checklist-done-color:          rgba(var(--light2_x), 0.5);
 
     --table-header-background:       hsl(220, 16%, 16%);
@@ -173,8 +173,8 @@ body {
     --graph-node-tag:                var(--red);
     --graph-node-attachment:         var(--green);
 
-    --calendar-hover:                var(--red);
-    --calendar-background-hover:     var(--dark3);
+    --calendar-hover:                var(--nano-color-critical);
+    --calendar-background-hover:     var(--nano-color-subtle);
     --calendar-week:                 var(--nano-color-critical);
     --calendar-year:                 var(--nano-color-critical);
     --calendar-today:                var(--nano-color-critical);
@@ -186,6 +186,8 @@ body {
 
     --tab-text-color-focused-active:         var(--frost2);
     --tab-text-color-focused-active-current: var(--red);
+
+    --list-marker-color: var(--nano-color-faded);
 }
 
 .theme-light {
@@ -244,9 +246,9 @@ body {
     --text-accent:                   var(--orange);
     --text-accent-hover:             var(--frost2);
 
-    --tag-color:                     var(--dark3);
-    --tag-background:                var(--light1);
-    --tag-background-hover:          var(--light0);
+    --tag-color:                     var(--nano-color-foreground);
+    --tag-background:                var(--nano-color-background);
+    --tag-background-hover:          var(--nano-color-highlight);
 
     --titlebar-text-color-focused:   var(--red);
 
@@ -256,10 +258,11 @@ body {
     --italic-color:                  var(--green);
 */
 
-    --checkbox-color:                var(--frost2);
-    --checkbox-color-hover:          var(--frost2);
-    --checkbox-border-color:         var(--frost2);
-    --checkbox-border-color-hover:   var(--frost2);
+    --checkbox-color:                var(--nano-color-salient);
+    --checkbox-color-hover:          var(--nano-color-salient);
+    --checkbox-border-color:         var(--nano-color-salient);
+    --checkbox-border-color-hover:   var(--nano-color-faded);
+
     --checklist-done-color:          rgba(var(--dark2_x), 0.4);
 
     --table-header-background:       rgba(var(--light2_x), 0.2);
@@ -291,7 +294,7 @@ body {
     --graph-node-tag:                var(--red);
     --graph-node-attachment:         var(--green);
 
-    --calendar-hover:                var(--red);
+    --calendar-hover:                var(--nano-color-subtle);
     --calendar-background-hover:     var(--light0);
     --calendar-week:                 var(--nano-color-critical);
     --calendar-year:                 var(--nano-color-critical);
@@ -304,73 +307,124 @@ body {
 
     --tab-text-color-focused-active:         var(--frost2);
     --tab-text-color-focused-active-current: var(--red);
+
+    --list-marker-color: var(--nano-color-faded);
 }
 
-table
-{
+table {
     border: 1px solid var(--background-secondary) !important;
     border-collapse: collapse;
 }
 
-thead
-{
+thead {
     border-bottom: 2px solid var(--background-modifier-border) !important;
 }
   
-th
-{
+th {
     font-weight: 600 !important;
     border: 1px solid var(--background-secondary) !important;
 }
-
-td
-{
+.table-view-table > thead > tr > th {
+    font-size: var(--font-text-size);
+}
+td {
     border-left: 1px solid var(--background-secondary) !important;
     border-right: 1px solid var(--background-secondary) !important;
     border-bottom: 1px solid var(--background-secondary) !important;
 }
 
+
 .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon, .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
     color: var(--nano-color-popout);
 }
 
-.markdown-rendered tbody tr:nth-child(even)
-{
+.inline-title {
+    background: var(--nano-color-subtle);
+    padding: 8px;
+}
+
+.inline-title:before {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 4px;
+    margin-left: -8px;
+    height: auto;
+    content: "MD";
+    color: var(--nano-color-background);
+    background: var(--nano-color-popout);
+}
+
+.inline-title,
+.markdown-preview-view h1,
+.HyperMD-header-1,
+.cm-header-1,
+.markdown-preview-view h2,
+.HyperMD-header-2,
+.cm-header-2,
+.markdown-preview-view h3,
+.HyperMD-header-3,
+.cm-header-3, 
+.markdown-preview-view h4,
+.HyperMD-header-4,
+.cm-header-4, 
+.markdown-preview-view h5,
+.HyperMD-header-5,
+.cm-header-5, 
+.markdown-preview-view h6,
+.HyperMD-header-6,
+.cm-header-6 {
+    font-size: var(--font-text-size);
+}
+
+.search-empty-state {
+    color: var(--nano-color-faded);
+}
+.tree-item-flair {
+    color: var(--nano-color-faded);
+}
+
+.cm-s-obsidian .cm-line.HyperMD-header {
+    padding: 0;
+}
+
+
+.markdown-rendered tbody tr:nth-child(even) {
     background-color: var(--table-row-even-background) !important;
 }
 
-.markdown-rendered tbody tr:nth-child(odd)
-{
+.markdown-rendered tbody tr:nth-child(odd) {
     background-color: var(--table-row-odd-background) !important;
 }
 
 .markdown-rendered tbody tr:nth-child(even):hover,
-.markdown-rendered tbody tr:nth-child(odd):hover
-{
+.markdown-rendered tbody tr:nth-child(odd):hover {
     background-color: var(--table-row-background-hover) !important;
 }
 
-.markdown-rendered mark
-{
+.markdown-rendered mark {
     background-color: var(--text-highlight-bg);
     color: var(--text-highlight-fg);
 }
 
-.markdown-rendered mark a
-{
+.markdown-rendered mark a {
     color: var(--red) !important;
     font-weight: 600;
 }
 
-.search-result-file-matched-text
-{
+.cm-comment, .cm-meta {
+    color: var(--nano-color-faded);
+}
+
+.search-result-file-matched-text {
     color: var(--text-highlight-fg) !important;
 }
 
 a.tag,
 .cm-hashtag {
-    background: var(--nano-color-background);
-    color: var(--nano-color-foreground);
+    background: var(--tag-background);
+    color: var(--tag-color);
     text-transform: uppercase;
 }
 
@@ -385,7 +439,11 @@ a.tag {
 }
 a.tag:hover {
     color: var(--nano-color-strong);
-    text-decoration: underline;
+    text-decoration: none;
+    border-right: 1px solid var(--nano-color-subtle);
+    border-left: 1px solid var(--nano-color-subtle);
+    border-top: 1px solid var(--nano-color-subtle);
+    border-bottom: 1px solid var(--nano-color-subtle);
 }
 
 .cm-hashtag.cm-hashtag-begin {
@@ -439,17 +497,23 @@ pre[class*="language-"]
     color: var(--link-url) !important;
 }
 .markdown-rendered .internal-link,
-.cm-s-obsidian span.cm-hmd-internal-link {
+.cm-s-obsidian span.cm-hmd-internal-link,
+.cm-s-obsidian span.cm-link {
     color: var(--link-url);
 }
 .markdown-rendered .internal-link:hover,
-.cm-s-obsidian span.cm-hmd-internal-link:hover {
+.cm-s-obsidian span.cm-hmd-internal-link:hover,
+.cm-s-obsidian span.cm-link:hover {
     color: var(--link-url);
     text-decoration: underline;
 }
 
 .cm-url:hover {
     color: var(--text-accent-hover) !important;
+}
+
+button.kanban-plugin__new-item-button:hover {
+    background-color: var(--nano-color-salient);
 }
 
 /* Keep highlight/marks the same between viewer and editor. */
@@ -549,19 +613,38 @@ pre[class*="language-"]
     color: var(--calendar-today) !important;
 }
 
+.active .today {
+    background: var(--nano-color-faded);
+}
+
 .calendar .week-num:hover,
 .calendar .day:hover {
     color: var(--calendar-hover) !important;
     background-color: var(--calendar-background-hover) !important;
 }
 
+.cm-em {
+    color: var(--nano-color-foreground);
+}
+.cm-strong {
+    color: var(--nano-color-foreground);
+    font-weight: 600;
+}
+
+.collapse-icon svg.svg-icon {
+    color: var(--nano-color-foreground);
+}
+
 .markdown-embed-title {
-    color: var(--yellow);
     font-weight: 600 !important;
 }
 
 .cm-active {
     background-color: var(--nano-color-highlight) !important;
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg, .cm-s-obsidian div.HyperMD-codeblock-end-bg, .cm-s-obsidian div.HyperMD-codeblock-bg {
+    background-color: var(--nano-color-highlight);
 }
 
 .nav-file-tag
